@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "xv6-qemu-gdb",
+            "type": "shell",
+            "isBackground": true,
+            // 启动 QEMU 并开启 GDB 服务，监听 26000 端口。CPUS=1 使调试更简单
+            "command": "make",
+            "args": ["qemu-gdb", "CPUS=1"],
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "."
+                },
+                "background": {
+                    "beginsPattern": ".*Now run 'gdb' in another window.",
+                    "endsPattern": "."
+                }
+            }
+        }
+    ]
+}
